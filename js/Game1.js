@@ -168,12 +168,12 @@ Tiger.Game1.prototype = {
         this.state.start('MainMenu');
     },
     runLeft: function () {
-        this.tiger.x = this.tiger.x - 230;
-        this.bodyv.x = this.bodyv.x - 230;
+        this.tiger.x = 70;
+        this.bodyv.x = 70;
     },
     runRight: function () {
-        this.tiger.x = this.tiger.x + 230;
-        this.bodyv.x = this.bodyv.x + 230;
+        this.tiger.x = 530;
+        this.bodyv.x = 530;
     },
     runMid: function () {
         this.tiger.x = 300;
