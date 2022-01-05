@@ -38,7 +38,7 @@
 <body>
 	<script>
 		(function () {
-			var game = new Phaser.Game(740, 1136, Phaser.Canvas, 'game');
+			var game = new Phaser.Game(740, 1136, Phaser.AUTO, 'game');
 			game.state.add('Boot', Tiger.Boot);
 			game.state.add('Preloader', Tiger.Preloader);
 			game.state.add('MainMenu', Tiger.MainMenu);
