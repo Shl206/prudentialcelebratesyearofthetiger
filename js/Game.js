@@ -7,7 +7,7 @@ Tiger.Game.prototype = {
         //this.Gamebg = this.add.tileSprite(0, 0, Tiger.GAME_WIDTH, Tiger.GAME_HEIGHT, 'Gamebg');
         //var Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
         //Gamebg.autoScroll(0, 100);
-        this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
+        this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'GameBg');
 
         //this.Gamebg.setOrigin(0, 0);
         //this.Gamebg.setScrollFactor(0);
@@ -29,7 +29,7 @@ Tiger.Game.prototype = {
         this.game.physics.enable(this.Award1, Phaser.Physics.ARCADE);
         this.Award12 = this.add.sprite(40, -400, 'Award12');
         this.game.physics.enable(this.Award12, Phaser.Physics.ARCADE);
-        
+
 
 
 

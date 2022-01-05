@@ -7,7 +7,7 @@ Tiger.Game3.prototype = {
         //this.Gamebg = this.add.tileSprite(0, 0, Tiger.GAME_WIDTH, Tiger.GAME_HEIGHT, 'Gamebg');
         //var Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
         //Gamebg.autoScroll(0, 100);
-        this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
+        this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'GameBg');
         //this.Gamebg.setOrigin(0, 0);
         //this.Gamebg.setScrollFactor(0);
         //Gamebg.autoScroll(0, 20);
@@ -26,7 +26,11 @@ Tiger.Game3.prototype = {
         this.game.physics.enable(this.Block7, Phaser.Physics.ARCADE);
         this.Award4 = this.add.sprite(480, -700, 'Award4');
         this.game.physics.enable(this.Award4, Phaser.Physics.ARCADE);
-        
+        this.pondv = this.add.sprite(30, -700, 'pondv');
+        this.game.physics.enable(this.pondv, Phaser.Physics.ARCADE);
+        this.pond1v = this.add.sprite(300, -700, 'pond1v');
+        this.game.physics.enable(this.pond1v, Phaser.Physics.ARCADE);
+
 
 
 
@@ -60,11 +64,11 @@ Tiger.Game3.prototype = {
 
         this.physics.arcade.overlap(this.bodyv, this.Block1, this.hitBlock, null, this);
         this.physics.arcade.overlap(this.bodyv, this.Block9, this.hitBlock, null, this);
-        this.physics.arcade.overlap(this.bodyv, this.Block7, this.hitBlock, null, this);
+        this.physics.arcade.overlap(this.bodyv, this.pondv, this.hitBlock, null, this);
+        this.physics.arcade.overlap(this.bodyv, this.pond1v, this.hitBlock, null, this);
         this.physics.arcade.overlap(this.bodyv, this.Award4, this.hitAward, null, this);
         //this.physics.arcade.overlap(this.tiger, this.Award1, this.hitAward, null, this);
         // /this.gameover(this.playing);
-
     },
 
     onStart: function () {
@@ -79,6 +83,8 @@ Tiger.Game3.prototype = {
         var tween = this.add.tween(this.Block9).to({ y: 1200 }, 5800, null, true);
         var tween = this.add.tween(this.Block7).to({ y: 1200 }, 8500, null, true);
         var tween = this.add.tween(this.Award4).to({ y: 1200 }, 8500, null, true);
+        var tween = this.add.tween(this.pondv).to({ y: 1200 }, 8100, null, true);
+        var tween = this.add.tween(this.pond1v).to({ y: 1200 }, 9300, null, true);
         //var tween = this.add.tween(this.Award1).to({ y: 1200 }, 15000, null, true);
         //this.gameIsover = false;
     },

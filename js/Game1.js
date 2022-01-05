@@ -7,7 +7,7 @@ Tiger.Game1.prototype = {
         //this.Gamebg = this.add.tileSprite(0, 0, Tiger.GAME_WIDTH, Tiger.GAME_HEIGHT, 'Gamebg');
         //var Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
         //Gamebg.autoScroll(0, 100);
-        this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
+        this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'GameBg');
         //this.Gamebg.setOrigin(0, 0);
         //this.Gamebg.setScrollFactor(0);
         //Gamebg.autoScroll(0, 20);
@@ -21,16 +21,16 @@ Tiger.Game1.prototype = {
         this.Block3 = this.add.sprite(280, 850, 'Block3');
         this.Block4 = this.add.sprite(40, 300, 'Block4');
         this.game.physics.enable(this.Block4, Phaser.Physics.ARCADE);
-        this.Block5 = this.add.sprite(350, -200, 'Block5');
+        this.Block5 = this.add.sprite(300, -200, 'Block5');
         this.game.physics.enable(this.Block5, Phaser.Physics.ARCADE);
         this.Block6 = this.add.sprite(30, -900, 'Block6');
         this.game.physics.enable(this.Block6, Phaser.Physics.ARCADE);
         this.Award2 = this.add.sprite(10, -300, 'Award2');
         this.Award22 = this.add.sprite(10, -300, 'Award22');
         this.game.physics.enable(this.Award22, Phaser.Physics.ARCADE);
-        this.pondv = this.add.sprite(350, -200, 'pondv');
+        this.pondv = this.add.sprite(300, -200, 'pondv');
         this.game.physics.enable(this.pondv, Phaser.Physics.ARCADE);
-        this.pond1v = this.add.sprite(600, -200, 'pond1v');
+        this.pond1v = this.add.sprite(550, -200, 'pond1v');
         this.game.physics.enable(this.pond1v, Phaser.Physics.ARCADE);
 
 
@@ -83,8 +83,8 @@ Tiger.Game1.prototype = {
         var tween = this.add.tween(this.Block3).to({ y: 1200 }, 1500, null, true);
         var tween = this.add.tween(this.Block4).to({ y: 1200 }, 4050, null, true);
         var tween = this.add.tween(this.Block5).to({ y: 1200 }, 6400, null, true);
-        var tween = this.add.tween(this.pondv).to({ y: 1200 }, 9000, null, true);
-        var tween = this.add.tween(this.pond1v).to({ y: 1200 }, 9000, null, true);
+        var tween = this.add.tween(this.pondv).to({ y: 1200 }, 6300, null, true);
+        var tween = this.add.tween(this.pond1v).to({ y: 1200 }, 6300, null, true);
         var tween = this.add.tween(this.Block6).to({ y: 1200 }, 9500, null, true);
         var tween = this.add.tween(this.Award2).to({ y: 1200 }, 6850, null, true);
         var tween = this.add.tween(this.Award22).to({ y: 1200 }, 8000, null, true);

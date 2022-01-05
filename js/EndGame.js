@@ -4,23 +4,16 @@ Tiger.EndGame = function (EndGame) {
 Tiger.EndGame.prototype = {
     create: function () {
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
-        //this.Gamebg = this.add.tileSprite(0, 0, Tiger.GAME_WIDTH, Tiger.GAME_HEIGHT, 'Gamebg');
-        //var Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
-        //Gamebg.autoScroll(0, 100);
-        this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
-        //this.Gamebg.setOrigin(0, 0);
-        //this.Gamebg.setScrollFactor(0);
-        //Gamebg.autoScroll(0, 20);
-        //this.Gamebg = this.add.sprite(0, 0, 'Gamebg');
+        this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'GameBg');
 
         //Block
-        //this.BlockGroup = this.add.group();
-        //this.boxGroup.enableBody = true;
         this.Endline = this.add.sprite(0, -900, 'End-line');
         this.game.physics.enable(this.Endline, Phaser.Physics.ARCADE);
-        this.Block7 = this.add.sprite(30, 550, 'Block7');
+        this.Block7 = this.add.sprite(30, 850, 'Block7');
         this.Block2 = this.add.sprite(450, -100, 'Block2');
-        this.Block8 = this.add.sprite(30, -250, 'Block8');
+        this.game.physics.enable(this.Block2, Phaser.Physics.ARCADE);
+        this.Block8 = this.add.sprite(-30, -250, 'Block8');
+        this.game.physics.enable(this.Block8, Phaser.Physics.ARCADE);
         this.goal = this.add.sprite(0, -900, 'goal');
 
 
@@ -32,16 +25,12 @@ Tiger.EndGame.prototype = {
         var tween = this.add.tween(this.tiger).to({ y: 690 }, 1000, null, true);
         tween.onComplete.add(this.onStart, this);
         this.physics.enable(this.tiger, Phaser.Physics.ARCADE);
-        this.bodyv = this.add.sprite(310, 600, 'bodyv');
-        var tween = this.add.tween(this.bodyv).to({ y: 750 }, 1000, null, true);
+        this.bodyv = this.add.sprite(530, 600, 'bodyv');
+        var tween = this.add.tween(this.bodyv).to({ y: 760 }, 1000, null, true);
         this.physics.enable(this.bodyv, Phaser.Physics.ARCADE);
 
 
         this.Logo = this.add.sprite(560, 0, 'Logo');
-
-
-        //this.physics.enable(this.tiger, Phaser.Physics.ARCADE);
-        //this.tiger.body.setSize(55, 120, 10, 20);
 
 
         var btnL = this.add.button(50, 910, 'left', this.runLeft, this);
@@ -53,8 +42,11 @@ Tiger.EndGame.prototype = {
 
     update: function () {
 
-        this.physics.arcade.overlap(this.bodyv, this.Block9, this.hitBlock, null, this);
+        this.physics.arcade.overlap(this.bodyv, this.Block8, this.hitBlock, null, this);
+        this.physics.arcade.overlap(this.bodyv, this.Block7, this.hitBlock, null, this);
+        this.physics.arcade.overlap(this.bodyv, this.Block2, this.hitBlock, null, this);
         this.physics.arcade.overlap(this.bodyv, this.Endline, this.hitAward, null, this);
+
         // /this.gameover(this.playing);
 
     },
@@ -65,7 +57,7 @@ Tiger.EndGame.prototype = {
         //this.tiger.inputEnabled = true;
         //this.tiger.input.enableDrag(true);
         this.tiger.body.collideWorldBounds = true;
-        var tween = this.add.tween(this.Block7).to({ y: 1200 }, 3000, null, true);
+        var tween = this.add.tween(this.Block7).to({ y: 1200 }, 1500, null, true);
         var tween = this.add.tween(this.Block2).to({ y: 1200 }, 5800, null, true);
         var tween = this.add.tween(this.Block8).to({ y: 1200 }, 6500, null, true);
         var tween = this.add.tween(this.goal).to({ y: 1200 }, 9500, null, true);
@@ -88,7 +80,7 @@ Tiger.EndGame.prototype = {
         this.Logo.destroy();
         this.tiger.destroy();
         this.Block8.destroy();
-        this.Block9.destroy();
+        this.bodyv.destroy();
         this.showGameOverTxt();
     },
     showGameOverTxt: function () {
@@ -103,6 +95,7 @@ Tiger.EndGame.prototype = {
     gameover1: function () {
         this.gameover = true;
         this.Gamebg.destroy();
+        this.bodyv.destroy();
         this.showGameOverTxt1();
     },
     showGameOverTxt1: function () {

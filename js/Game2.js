@@ -7,7 +7,7 @@ Tiger.Game2.prototype = {
         //this.Gamebg = this.add.tileSprite(0, 0, Tiger.GAME_WIDTH, Tiger.GAME_HEIGHT, 'Gamebg');
         //var Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
         //Gamebg.autoScroll(0, 100);
-        this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
+        this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'GameBg');
         //this.Gamebg.setOrigin(0, 0);
         //this.Gamebg.setScrollFactor(0);
         //Gamebg.autoScroll(0, 20);
@@ -20,17 +20,18 @@ Tiger.Game2.prototype = {
         //this.game.physics.enable(this.Block1, Phaser.Physics.ARCADE);
         this.Block5 = this.add.sprite(350, 800, 'Block5');
         this.game.physics.enable(this.Block5, Phaser.Physics.ARCADE);
-        this.Block6 = this.add.sprite(-30,50, 'Block6');
+        this.Block6 = this.add.sprite(-30, 50, 'Block6');
         this.game.physics.enable(this.Block6, Phaser.Physics.ARCADE);
         this.Block7 = this.add.sprite(300, -650, 'Block7');
-        this.game.physics.enable(this.Block7, Phaser.Physics.ARCADE);
         this.Award3 = this.add.sprite(65, -650, 'Award3');
         this.Award22 = this.add.sprite(65, -700, 'Award22');
         this.game.physics.enable(this.Award22, Phaser.Physics.ARCADE);
         this.Block1 = this.add.sprite(-38, -1200, 'Block1');
         this.game.physics.enable(this.Block1, Phaser.Physics.ARCADE);
-        //this.Award1 = this.add.sprite(20, 200, 'Award1');
-        //this.game.physics.enable(this.Award1, Phaser.Physics.ARCADE);
+        this.pondv = this.add.sprite(300, -650, 'pondv');
+        this.game.physics.enable(this.pondv, Phaser.Physics.ARCADE);
+        this.pond1v = this.add.sprite(550, -650, 'pond1v');
+        this.game.physics.enable(this.pond1v, Phaser.Physics.ARCADE);
 
 
 
@@ -61,7 +62,8 @@ Tiger.Game2.prototype = {
 
     update: function () {
         this.physics.arcade.overlap(this.bodyv, this.Block6, this.hitBlock, null, this);
-        this.physics.arcade.overlap(this.bodyv, this.Block7, this.hitBlock, null, this);
+        this.physics.arcade.overlap(this.bodyv, this.pondv, this.hitBlock, null, this);
+        this.physics.arcade.overlap(this.bodyv, this.pond1v, this.hitBlock, null, this);
         this.physics.arcade.overlap(this.bodyv, this.Block8, this.hitBlock, null, this);
         this.physics.arcade.overlap(this.bodyv, this.Award22, this.hitAward, null, this);
         //this.physics.arcade.overlap(this.tiger, this.Award1, this.hitAward, null, this);
@@ -81,6 +83,8 @@ Tiger.Game2.prototype = {
         var tween = this.add.tween(this.Award3).to({ y: 1200 }, 8000, null, true);
         var tween = this.add.tween(this.Award22).to({ y: 1200 }, 8800, null, true);
         var tween = this.add.tween(this.Block1).to({ y: 1200 }, 11000, null, true);
+        var tween = this.add.tween(this.pondv).to({ y: 1200 }, 7500, null, true);
+        var tween = this.add.tween(this.pond1v).to({ y: 1200 }, 8700, null, true);
         //this.gameIsover = false;
     },
     hitBlock: function () {
