@@ -23,7 +23,7 @@ Tiger.Game2.prototype = {
         this.Block6 = this.add.sprite(-30, 50, 'Block6');
         this.game.physics.enable(this.Block6, Phaser.Physics.ARCADE);
         this.Block7 = this.add.sprite(300, -650, 'Block7');
-        this.Award3 = this.add.sprite(65, -650, 'Award3');
+        this.Award3 = this.add.sprite(40, -650, 'Award1');
         this.Award22 = this.add.sprite(65, -700, 'Award22');
         this.game.physics.enable(this.Award22, Phaser.Physics.ARCADE);
         this.Block1 = this.add.sprite(-38, -1200, 'Block1');
@@ -35,10 +35,10 @@ Tiger.Game2.prototype = {
 
 
 
-        this.tiger = this.add.sprite(70, 480, 'tiger');
+        this.tiger = this.add.sprite(70, 630, 'tiger');
         this.tiger.animations.add('move');
         this.tiger.animations.play('move', 6, true);
-        var tween = this.add.tween(this.tiger).to({ y: 670 }, 1000, null, true);
+        var tween = this.add.tween(this.tiger).to({ y: 670 }, 300, null, true);
         tween.onComplete.add(this.onStart, this);
         this.physics.enable(this.tiger, Phaser.Physics.ARCADE);
         this.bodyv = this.add.sprite(80, 520, 'bodyv');
@@ -81,7 +81,7 @@ Tiger.Game2.prototype = {
         var tween = this.add.tween(this.Block6).to({ y: 1200 }, 5000, null, true);
         var tween = this.add.tween(this.Block7).to({ y: 1200 }, 8000, null, true);
         var tween = this.add.tween(this.Award3).to({ y: 1200 }, 8000, null, true);
-        var tween = this.add.tween(this.Award22).to({ y: 1200 }, 8800, null, true);
+        var tween = this.add.tween(this.Award22).to({ y: 1200 }, 8550, null, true);
         var tween = this.add.tween(this.Block1).to({ y: 1200 }, 11000, null, true);
         var tween = this.add.tween(this.pondv).to({ y: 1200 }, 7500, null, true);
         var tween = this.add.tween(this.pond1v).to({ y: 1200 }, 8700, null, true);
@@ -124,7 +124,7 @@ Tiger.Game2.prototype = {
         this.add.tileSprite(0, 0, 740, 1136, 'win1Bg');
         this.add.sprite(25, 150, 'RedBook2');
         this.add.sprite(120, 210, 'GM3');
-        this.add.sprite(150, 460, 'TigernFish3');
+        this.add.sprite(150, 460, 'TigernFish');
         this.add.button(50, 1000, 'continue.btn', this.startGame, this);
         this.add.button(400, 1000, 'End', this.MainMenu, this);
         this.Logo = this.add.sprite(560, 0, 'Logo');

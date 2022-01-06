@@ -1,5 +1,7 @@
 var Tiger = {};
 Tiger.Boot = function (game) {
+    //Tiger.GAME_WIDTH = 740;
+    //Tiger.GAME_HEIGHT = 1136;
     Tiger.GAME_WIDTH = 740;
     Tiger.GAME_HEIGHT = 1136;
 };

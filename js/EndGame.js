@@ -19,14 +19,14 @@ Tiger.EndGame.prototype = {
 
 
 
-        this.tiger = this.add.sprite(530, 520, 'tiger');
+        this.tiger = this.add.sprite(530, 630, 'tiger');
         this.tiger.animations.add('move');
         this.tiger.animations.play('move', 6, true);
-        var tween = this.add.tween(this.tiger).to({ y: 690 }, 1000, null, true);
+        var tween = this.add.tween(this.tiger).to({ y: 670 }, 300, null, true);
         tween.onComplete.add(this.onStart, this);
         this.physics.enable(this.tiger, Phaser.Physics.ARCADE);
-        this.bodyv = this.add.sprite(530, 600, 'bodyv');
-        var tween = this.add.tween(this.bodyv).to({ y: 760 }, 1000, null, true);
+        this.bodyv = this.add.sprite(540, 600, 'bodyv');
+        var tween = this.add.tween(this.bodyv).to({ y: 720 }, 1000, null, true);
         this.physics.enable(this.bodyv, Phaser.Physics.ARCADE);
 
 

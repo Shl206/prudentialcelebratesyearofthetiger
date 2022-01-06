@@ -24,7 +24,7 @@ Tiger.Game3.prototype = {
         this.game.physics.enable(this.Block9, Phaser.Physics.ARCADE);
         this.Block7 = this.add.sprite(30, -700, 'Block7');
         this.game.physics.enable(this.Block7, Phaser.Physics.ARCADE);
-        this.Award4 = this.add.sprite(480, -700, 'Award4');
+        this.Award4 = this.add.sprite(440, -700, 'Award2');
         this.game.physics.enable(this.Award4, Phaser.Physics.ARCADE);
         this.pondv = this.add.sprite(30, -700, 'pondv');
         this.game.physics.enable(this.pondv, Phaser.Physics.ARCADE);
@@ -34,10 +34,10 @@ Tiger.Game3.prototype = {
 
 
 
-        this.tiger = this.add.sprite(70, 560, 'tiger');
+        this.tiger = this.add.sprite(70, 630, 'tiger');
         this.tiger.animations.add('move');
         this.tiger.animations.play('move', 6, true);
-        var tween = this.add.tween(this.tiger).to({ y: 670 }, 1000, null, true);
+        var tween = this.add.tween(this.tiger).to({ y: 670 }, 300, null, true);
         tween.onComplete.add(this.onStart, this);
         this.physics.enable(this.tiger, Phaser.Physics.ARCADE);
         this.bodyv = this.add.sprite(80, 560, 'bodyv');
@@ -128,7 +128,7 @@ Tiger.Game3.prototype = {
         this.add.sprite(175, 240, 'GM4');
         this.add.button(50, 1000, 'continue.btn', this.startGame, this);
         this.add.button(400, 1000, 'End', this.MainMenu, this);
-        this.TigernFish = this.add.sprite(190, 450, 'TigernFish4');
+        this.TigernFish = this.add.sprite(190, 550, 'TigernFish2');
         this.Logo = this.add.sprite(560, 0, 'Logo');
     },
 
