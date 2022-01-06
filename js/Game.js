@@ -156,7 +156,7 @@ Tiger.Game.prototype = {
         //this.add.button(200, 500, 'button-start', this.win1, this);
         this.add.tileSprite(0, 0, 740, 1136, 'win1Bg');
         this.add.sprite(25, 150, 'RedBook2');
-        this.add.sprite(188, 240, 'GM1');
+        this.add.sprite(110, 210, 'GM3');
         this.add.button(50, 1000, 'continue.btn', this.startGame1, this);
         this.add.button(400, 1000, 'End', this.MainMenu, this);
         this.TigernFish = this.add.sprite(185, 450, 'TigernFish4');

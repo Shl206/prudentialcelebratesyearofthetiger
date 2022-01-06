@@ -103,7 +103,7 @@ Tiger.EndGame.prototype = {
         this.add.button(200, 500, 'button-start', this.win1, this);
         this.add.tileSprite(0, 0, 740, 1136, 'win1Bg');
         this.add.sprite(25, 150, 'RedBook2');
-        this.add.sprite(170, 210, 'GM5');
+        this.add.sprite(110, 240, 'GM5');
         this.add.button(210, 1000, 'End', this.MainMenu, this);
         this.add.sprite(0, 480, 'Endgoal');
         this.add.sprite(300, 720, 'endtiger');

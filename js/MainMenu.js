@@ -6,7 +6,7 @@ Tiger.MainMenu.prototype = {
         this.add.button(200, 900, 'button-start', this.startGame, this);
         this.Tiger3 = this.add.sprite(50, 535, 'Tiger3');
         this.Logo = this.add.sprite(560, 0, 'Logo');
-        this.Word1 = this.add.sprite(112, 230, 'Word1');
+        this.Word1 = this.add.sprite(140, 230, 'Word1');
         this.Word2 = this.add.sprite(150, 1010, 'Word2');
 
 
@@ -17,6 +17,6 @@ Tiger.MainMenu.prototype = {
         //( fly 5 true: name framerate it's work)
     },
     startGame: function () {
-        this.state.start('Game');
+        this.state.start('Game1');
     }
 };
