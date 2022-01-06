@@ -17,6 +17,6 @@ Tiger.MainMenu.prototype = {
         //( fly 5 true: name framerate it's work)
     },
     startGame: function () {
-        this.state.start('Game1');
+        this.state.start('Game');
     }
 };
