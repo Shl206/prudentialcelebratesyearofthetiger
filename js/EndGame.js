@@ -30,7 +30,7 @@ Tiger.EndGame.prototype = {
         this.physics.enable(this.bodyv, Phaser.Physics.ARCADE);
 
 
-        this.Logo = this.add.sprite(560, 0, 'Logo');
+        //this.Logo = this.add.sprite(560, 0, 'Logo');
 
 
         var btnL = this.add.button(50, 910, 'left', this.runLeft, this);
@@ -77,7 +77,6 @@ Tiger.EndGame.prototype = {
         this.gameover = true;
         this.Gamebg.stopScroll();
         this.add.sprite(0, 0, 'Filter');
-        this.Logo.destroy();
         this.tiger.destroy();
         this.Block8.destroy();
         this.bodyv.destroy();
@@ -88,7 +87,8 @@ Tiger.EndGame.prototype = {
         this.add.sprite(25, 150, 'RedBook2');
         this.add.button(50, 1000, 'restart.btn', this.startGame, this);
         this.add.button(400, 1000, 'End', this.MainMenu, this);
-        this.Logo = this.add.sprite(560, 0, 'Logo');
+        this.overlay = this.add.sprite(560, 0, 'Logo');
+        this.overlay.visible = window.screen.width > 480 ? false : true;
         this.add.sprite(145, 240, 'fail1');
         this.add.sprite(290, 630, 'dump1');
     },
@@ -107,7 +107,8 @@ Tiger.EndGame.prototype = {
         this.add.button(210, 1000, 'End', this.MainMenu, this);
         this.add.sprite(0, 480, 'Endgoal');
         this.add.sprite(300, 720, 'endtiger');
-        this.Logo = this.add.sprite(560, 0, 'Logo');
+        this.overlay = this.add.sprite(560, 0, 'Logo');
+        this.overlay.visible = window.screen.width > 480 ? false : true;
     },
 
 

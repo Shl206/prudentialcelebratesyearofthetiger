@@ -4,20 +4,9 @@ Tiger.Game1 = function (game1) {
 Tiger.Game1.prototype = {
     create: function () {
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
-        //this.Gamebg = this.add.tileSprite(0, 0, Tiger.GAME_WIDTH, Tiger.GAME_HEIGHT, 'Gamebg');
-        //var Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
-        //Gamebg.autoScroll(0, 100);
         this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'GameBg');
-        //this.Gamebg.setOrigin(0, 0);
-        //this.Gamebg.setScrollFactor(0);
-        //Gamebg.autoScroll(0, 20);
-        //this.Gamebg = this.add.sprite(0, 0, 'Gamebg');
 
         //Block
-        //this.BlockGroup = this.add.group();
-        //this.boxGroup.enableBody = true;
-        //this.Block1 = this.add.sprite(-65, 400, 'Block1');
-        //this.game.physics.enable(this.Block1, Phaser.Physics.ARCADE);
         this.Block3 = this.add.sprite(280, 850, 'Block3');
         this.Block4 = this.add.sprite(40, 300, 'Block4');
         this.game.physics.enable(this.Block4, Phaser.Physics.ARCADE);
@@ -46,7 +35,7 @@ Tiger.Game1.prototype = {
         this.physics.enable(this.bodyv, Phaser.Physics.ARCADE);
 
 
-        this.Logo = this.add.sprite(560, 0, 'Logo');
+        //this.Logo = this.add.sprite(560, 0, 'Logo');
 
 
         //this.physics.enable(this.tiger, Phaser.Physics.ARCADE);
@@ -106,7 +95,6 @@ Tiger.Game1.prototype = {
         this.gameover = true;
         this.Gamebg.stopScroll();
         this.add.sprite(0, 0, 'Filter');
-        this.Logo.destroy();
         this.tiger.destroy();
         this.Block5.destroy();
         this.Block6.destroy();
@@ -119,7 +107,8 @@ Tiger.Game1.prototype = {
         this.add.sprite(25, 150, 'RedBook2');
         this.add.button(50, 1000, 'restart.btn', this.startGame, this);
         this.add.button(400, 1000, 'End', this.MainMenu, this);
-        this.Logo = this.add.sprite(560, 0, 'Logo');
+        this.overlay = this.add.sprite(560, 0, 'Logo');
+        this.overlay.visible = window.screen.width > 480 ? false : true;
         this.add.sprite(145, 240, 'fail1');
         this.add.sprite(290, 630, 'dump1');
     },
@@ -135,7 +124,8 @@ Tiger.Game1.prototype = {
         this.add.sprite(25, 150, 'RedBook2');
         this.add.button(50, 1000, 'restart.btn', this.startGame, this);
         this.add.button(400, 1000, 'End', this.MainMenu, this);
-        this.Logo = this.add.sprite(560, 0, 'Logo');
+        this.overlay = this.add.sprite(560, 0, 'Logo');
+        this.overlay.visible = window.screen.width > 480 ? false : true;
         this.add.sprite(240, 240, 'fail2');
         this.add.sprite(280, 650, 'dump2');
     },
@@ -155,7 +145,8 @@ Tiger.Game1.prototype = {
         this.add.button(50, 1000, 'continue.btn', this.startGame2, this);
         this.add.button(400, 1000, 'End', this.MainMenu, this);
         this.add.sprite(180, 460, 'TigernFish3');
-        this.Logo = this.add.sprite(560, 0, 'Logo');
+        this.overlay = this.add.sprite(560, 0, 'Logo');
+        this.overlay.visible = window.screen.width > 480 ? false : true;
     },
     //Hit the award!!!!!!!!!
 

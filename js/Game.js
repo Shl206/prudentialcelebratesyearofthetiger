@@ -4,19 +4,9 @@ Tiger.Game = function (game) {
 Tiger.Game.prototype = {
     create: function () {
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
-        //this.Gamebg = this.add.tileSprite(0, 0, Tiger.GAME_WIDTH, Tiger.GAME_HEIGHT, 'Gamebg');
-        //var Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'mainMenuBg');
-        //Gamebg.autoScroll(0, 100);
         this.Gamebg = this.add.tileSprite(0, 0, 740, 1136, 'GameBg');
 
-        //this.Gamebg.setOrigin(0, 0);
-        //this.Gamebg.setScrollFactor(0);
-        //Gamebg.autoScroll(0, 20);
-        //this.Gamebg = this.add.sprite(0, 0, 'Gamebg');
-
         //Block
-        //this.BlockGroup = this.add.group();
-        //this.boxGroup.enableBody = true;
         this.Block1 = this.add.sprite(-65, 400, 'Block1');
         this.game.physics.enable(this.Block1, Phaser.Physics.ARCADE);
         this.Block2 = this.add.sprite(510, 100, 'Block2');
@@ -44,18 +34,12 @@ Tiger.Game.prototype = {
         this.physics.enable(this.bodyv, Phaser.Physics.ARCADE);
 
 
-        this.Logo = this.add.sprite(560, 0, 'Logo');
-
-
-        //this.physics.enable(this.tiger, Phaser.Physics.ARCADE);
-        //this.tiger.body.setSize(55, 120, 10, 20);
-
+        //this.Logo = this.add.sprite(560, 0, 'Logo');
 
 
         var btnL = this.add.button(50, 910, 'left', this.runLeft, this);
         var btnR = this.add.button(500, 910, 'right', this.runRight, this);
         var btnR = this.add.button(272, 910, 'mid', this.runMid, this);
-        //this.add.button(200, 500, 'button-start', this.win1, this);
         //button.......
         //this.startGame();
     },
@@ -73,7 +57,6 @@ Tiger.Game.prototype = {
     onStart: function () {
         this.gameIsover = false;
         this.Gamebg.autoScroll(0, 230);
-        //this.pic2.autoScroll(0, 200);
         //this.tiger.inputEnabled = true;
         //this.tiger.input.enableDrag(true);
         this.tiger.body.collideWorldBounds = true;
@@ -85,6 +68,7 @@ Tiger.Game.prototype = {
         var tween = this.add.tween(this.Award12).to({ y: 1200 }, 6600, null, true);
         var tween = this.add.tween(this.Block4).to({ y: 1200 }, 9000, null, true);
         //this.gameIsover = false;
+        
     },
     hitBlock: function () {
         if (this.gameIsover) return;
@@ -104,9 +88,7 @@ Tiger.Game.prototype = {
     gameover2: function () {
         this.gameover = true;
         this.Gamebg.autoScroll(0, 10);
-        //this.Gamebg.stopScroll(0, 0);
         //this.add.sprite(0, 0, 'Filter');
-        //  this.Logo.destroy();
         this.tiger.destroy();
         this.Block1.destroy();
         this.Block2.destroy();
@@ -123,7 +105,8 @@ Tiger.Game.prototype = {
         this.add.sprite(25, 150, 'RedBook2');
         this.add.button(50, 1000, 'restart.btn', this.startGame, this);
         this.add.button(400, 1000, 'End', this.MainMenu, this);
-        this.Logo = this.add.sprite(560, 0, 'Logo');
+        this.overlay = this.add.sprite(560, 0, 'Logo');
+        this.overlay.visible = window.screen.width > 880 ? false : true;
         this.add.sprite(145, 240, 'fail1');
         this.add.sprite(290, 630, 'dump1');
     },
@@ -139,7 +122,8 @@ Tiger.Game.prototype = {
         this.add.sprite(25, 150, 'RedBook2');
         this.add.button(50, 1000, 'restart.btn', this.startGame, this);
         this.add.button(400, 1000, 'End', this.MainMenu, this);
-        this.Logo = this.add.sprite(560, 0, 'Logo');
+        this.overlay = this.add.sprite(560, 0, 'Logo');
+        this.overlay.visible = window.screen.width > 880 ? false : true;
         this.add.sprite(240, 240, 'fail2');
         this.add.sprite(280, 650, 'dump2');
     },
@@ -160,7 +144,8 @@ Tiger.Game.prototype = {
         this.add.button(50, 1000, 'continue.btn', this.startGame1, this);
         this.add.button(400, 1000, 'End', this.MainMenu, this);
         this.TigernFish = this.add.sprite(185, 450, 'TigernFish4');
-        this.Logo = this.add.sprite(560, 0, 'Logo');
+        this.overlay = this.add.sprite(560, 0, 'Logo');
+        this.overlay.visible = window.screen.width > 880 ? false : true;
     },
     //Hit the Award!!!!!!!!
 
