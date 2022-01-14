@@ -11,7 +11,7 @@ Tiger.MainMenu.prototype = {
         this.overlay = this.add.sprite(560, 0, 'Logo');
         this.overlay.visible = window.screen.width > 480 ? false : true;
 
-        
+
 
         //use in next scene!!!
         //this.tiger = this.add.sprite(150, 500, 'tiger');
